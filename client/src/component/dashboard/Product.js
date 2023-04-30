@@ -6,7 +6,13 @@ const Product = ({ product, index }) => {
   const dispatch = useDispatch()
   const priceSum = product.qty * product.price
   //const weightSum = product.qty * product.weight
+  const showAlert = (id) => {
+    // eslint-disable-next-line no-restricted-globals
+    if (confirm("Are you sure you want to delete item and its all quantity ?")) {
 
+      dispatch(deleteProduct(id))
+    }
+  }
   return (
     <tr>
       <th scope="row">{index + 1}</th>
@@ -22,7 +28,8 @@ const Product = ({ product, index }) => {
 
       <td>
         <button type='button' className='btn btn-outline-primary btn-sm' onClick={() => dispatch(editProduct(product))}>Edit</button>
-        <button type='button' className='btn btn-outline-danger btn-sm' onClick={() => dispatch(deleteProduct(product._id))}>Delete</button>
+        {/* <button type='button' className='btn btn-outline-danger btn-sm' onClick={() => dispatch(deleteProduct(product._id))}>Delete</button> */}
+        <button type='button' className='btn btn-outline-danger btn-sm' onClick={() => showAlert(product._id)}>Delete</button>
       </td>
     </tr>
   )

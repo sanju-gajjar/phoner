@@ -7,11 +7,13 @@ import { Profile } from './user/Profile'
 import { Settings } from './user/Settings'
 import { Items } from './Items'
 import { ListItems } from './ListItems'
+import Invoice from '../Invoice/Invoice' // '../../component/Table'
 
 import { ReactComponent as UserImg } from '../../images/SVG/user.svg'
 import { ReactComponent as BoxImg } from '../../images/SVG/box.svg'
 import { ReactComponent as CogImg } from '../../images/SVG/cog.svg'
 import { ReactComponent as LogOutImg } from '../../images/SVG/log-out.svg'
+import { ReactComponent as InvoiceIcon } from '../../images/SVG/invoice.svg'
 
 
 const Dashboard = () => {
@@ -33,6 +35,10 @@ const Dashboard = () => {
             Welcome, {makeFirstLetterCapital(auth.user.username)}!
           </div>
           <ul className='sidebar__list'>
+            <li className='sidebar__item'><Link className='sidebar__link' to='/invoice'>
+              <InvoiceIcon fill="#eee" />
+              <span>Invoice</span>
+            </Link></li>
             <li className='sidebar__item'><Link className='sidebar__link' to='/dashboard'>
               <BoxImg fill="#eee" />
               <span>Add Products</span>
@@ -69,6 +75,7 @@ const Dashboard = () => {
             )} />
             <Route path='/dashboard' render={() => <Items />} />
             <Route path='/itemlist' render={() => <ListItems />} />
+            <Route path='/invoice' render={() => <Invoice />} />
 
           </Switch>
         </div>

@@ -75,7 +75,7 @@ router.route('/update/:id').post(chechAuthentication, (req, res) => {
 
 // Delete
 router.route('/:id').delete(chechAuthentication, (req, res) => {
-  Product.findOneAndDelete({ _id: req.params.id, userId: req.user._id })
+  Product.findOneAndDelete({ _id: req.params.id })
     .then(product => res.json(product._id))
     .catch(error => res.status(400).json(`Error: ${error}`));
 });

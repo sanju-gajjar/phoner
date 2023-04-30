@@ -67,6 +67,7 @@ export const updateProduct = updatedProduct => dispatch => {
 
 export const deleteProduct = id => dispatch => {
 
+
   axios.delete(`/api/products/${id}`)
     .then(res => dispatch({
       type: DELETE_PRODUCTS,

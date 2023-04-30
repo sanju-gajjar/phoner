@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-
 import useTable from "./useTable";
 import styles from "./Table.module.css";
 import TableFooter from "./TableFooter";
 
 import Product from '../dashboard/Product';
+import { filter } from "lodash";
+
 const Table = ({ data, rowsPerPage }) => {
     const [page, setPage] = useState(1);
-    const { slice, range } = useTable(data, page, rowsPerPage);
+    let { slice, range } = useTable(data, page, rowsPerPage, filter)
+
     return (
         <>
             <table className={styles.table}>
