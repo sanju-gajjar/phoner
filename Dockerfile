@@ -2,20 +2,15 @@
 FROM node:18-alpine
 # It installs the nodemon package for monitoring the Express server
 RUN npm install -g nodemon
-RUN npm install -g react-scripts axios bootstrap exceljs html-to-pdfmake jspdf pdfmake react react-dom react-redux react-router-dom redux redux-thunk
 # Creating the working directory
 WORKDIR /app
-
 # Copying the dependencies in the package.json file
-COPY package.json .
+COPY package.json /app
 #Installing all the dependencies
 RUN npm install
 #Copying all the files to the working directory
-COPY . .
-RUN cd /app/client
-RUN npm install -g react-scripts axios bootstrap exceljs html-to-pdfmake jspdf pdfmake react react-dom react-redux react-router-dom redux redux-thunk
-RUN npm install
-WORKDIR /app
+COPY . /app
+RUN npm install && npm install --prefix client
 #Container will run on this port
 EXPOSE 5000
 #Command to start the Docker container Node.js application
