@@ -3,9 +3,9 @@ FROM node:8-slim
 WORKDIR /app
 
 COPY . /app/
-CD /app/client
+WORKDIR /app/client
 RUN npm install
-CD ..
+WORKDIR /app
 RUN npm install
 EXPOSE 3000
 
