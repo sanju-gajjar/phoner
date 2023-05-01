@@ -13,6 +13,7 @@ RUN npm install
 #Copying all the files to the working directory
 COPY . .
 RUN cd /app/client
+RUN npm install -g react-scripts axios bootstrap exceljs html-to-pdfmake jspdf pdfmake react react-dom react-redux react-router-dom redux redux-thunk
 RUN npm install
 WORKDIR /app
 #Container will run on this port
