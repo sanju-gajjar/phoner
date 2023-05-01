@@ -5,12 +5,16 @@ RUN npm install -g nodemon
 RUN npm install -g react-scripts
 # Creating the working directory
 WORKDIR /app
+
 # Copying the dependencies in the package.json file
 COPY package.json .
 #Installing all the dependencies
 RUN npm install
 #Copying all the files to the working directory
 COPY . .
+RUN cd /app/client
+RUN npm install
+WORKDIR /app
 #Container will run on this port
 EXPOSE 5000
 #Command to start the Docker container Node.js application
