@@ -48,6 +48,7 @@ const AddProduct = () => {
             }
             console.log("Adding data" + row.values[1] + " " + row.values[2]);
           });
+          alert("Records added successfully", sheet.length)
         });
       });
     }

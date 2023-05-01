@@ -7,6 +7,7 @@ import { Profile } from './user/Profile'
 import { Settings } from './user/Settings'
 import { Items } from './Items'
 import { ListItems } from './ListItems'
+import { SalesItems } from './SalesItems'
 import Invoice from '../Invoice/Invoice' // '../../component/Table'
 
 import { ReactComponent as UserImg } from '../../images/SVG/user.svg'
@@ -35,9 +36,9 @@ const Dashboard = () => {
             Welcome, {makeFirstLetterCapital(auth.user.username)}!
           </div>
           <ul className='sidebar__list'>
-            <li className='sidebar__item'><Link className='sidebar__link' to='/invoice'>
+            <li className='sidebar__item'><Link className='sidebar__link' to='/sales'>
               <InvoiceIcon fill="#eee" />
-              <span>Invoice</span>
+              <span>Sale</span>
             </Link></li>
             <li className='sidebar__item'><Link className='sidebar__link' to='/dashboard'>
               <BoxImg fill="#eee" />
@@ -75,7 +76,7 @@ const Dashboard = () => {
             )} />
             <Route path='/dashboard' render={() => <Items />} />
             <Route path='/itemlist' render={() => <ListItems />} />
-            <Route path='/invoice' render={() => <Invoice />} />
+            <Route path='/sales' render={() => <SalesItems />} />
 
           </Switch>
         </div>
