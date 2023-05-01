@@ -2,6 +2,7 @@
 FROM node:18-alpine
 # It installs the nodemon package for monitoring the Express server
 RUN npm install -g nodemon
+RUN npm install -g react-scripts
 # Creating the working directory
 WORKDIR /app
 # Copying the dependencies in the package.json file
