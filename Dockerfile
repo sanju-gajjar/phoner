@@ -11,7 +11,5 @@ RUN npm install
 #Copying all the files to the working directory
 COPY . /app
 RUN npm install && npm install --prefix client
-#Container will run on this port
-EXPOSE 5000
 #Command to start the Docker container Node.js application
 CMD ["npm", "run", "dev"]
