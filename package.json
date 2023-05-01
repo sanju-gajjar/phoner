@@ -9,7 +9,7 @@
     "client": "npm start --prefix client",
     "install:client": "npm install --prefix client",
     "watch:sass": "npm run watch:sass --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run --prefix client\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "npm install && npm install --prefix client"
   },
   "keywords": [],
